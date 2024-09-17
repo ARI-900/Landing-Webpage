@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    
+}
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1250px;
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+
+#logo {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+#logo span {
+    font-size: 2rem;
+    color: orangered;
+}
+nav .menu-items {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    z-index: 100;
+}
+
+.menu-items a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+.menu-items a:hover {
+    color: #C06B3E;
+}
+.heroSection {
+    height: 100vh;
+    width: 100%;
+    background-image: url("./hero-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.innerContainer {
+    max-width: 1250px;
+    padding: 0px 15px;
+    margin: 0px auto;
+    width: 100%;
+    color: white;
+}
+.innerContainer .heroTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 2.3rem;
+    max-width: 625px;
+}
+
+.innerContainer  p {
+    font-weight: 400;
+    max-width: calc(100% - 45%);
+    margin-block: 1rem;
+    line-height: 2;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.innerContainer button {
+    margin-top: 1.3rem;
+   border: none;
+   background-color: #fff;
+   padding: 1rem 2.2rem;
+   font-size: 1rem;
+   font-weight: 600;
+   border-radius: 15px;
+   transition: all 0.5s ease;
+   cursor: pointer;
+   user-select: none;
+}
+
+.innerContainer button:hover {
+    background-color: #C06B3E;
+    color: white;
+    scale: 1.02;
+}
+
+/* NAVIGATION MENU BAR */
+#close {
+    cursor: pointer;
+    display: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+#menu {
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+/* Responsive  */
+@media screen and (max-width: 930px) {
+    
+    #logo {
+        font-size: 1.7rem;
+    }
+    #logo span {
+        font-size: 1.8rem;
+    }
+    #menu {
+        display: block;
+    }
+    #close {
+        display: block;
+    }
+    nav .menu-items {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        flex-direction: column;
+        width: 250px;
+        height: 100vh;
+        background-color: #fff;
+        padding: 70px 30px;
+        transition: all 0.5s ease;
+    }
+    li {
+        padding: 5px;
+    }
+    .menu-items a {
+        color: black;
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+    nav .menu-items.active{
+        left: 0px;
+    }
+    .innerContainer .heroTitle {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        font-size: 1.8rem;
+        max-width: 100%;
+        justify-content: center;
+    }
+    
+    .innerContainer  p {
+        max-width: 100%;
+        text-align: center;
+        margin-block: 2rem;
+    }
+    .btn {
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+    
+    .overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #3333334c;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+        
+    }
+
+}
+@media screen and (max-width: 500px) {
+    .innerContainer .heroTitle {
+        font-size: 1.2rem;
+    }
+    .innerContainer p{
+        font-size: 1rem;
+    }
+}
